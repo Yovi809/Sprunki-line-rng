@@ -1,0 +1,109 @@
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+
+local window = DrRayLibrary:Load("sprunki line | GG Hub", "Default")
+
+local tab = DrRayLibrary.newTab("Main", "ImageIdHere")
+
+tab.newToggle("fast auto spin", "fast auto spin is super spin!", true, function(toggleState)
+    if toggleState then
+        _G.auto = true
+    
+    
+    while _G.auto do
+local args = {
+    [1] = 1
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("TryUseRoll"):InvokeServer(unpack(args))
+wait(0.1)
+end
+    else
+        _G.auto = false
+    
+    
+    while _G.auto do
+local args = {
+    [1] = 1
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("TryUseRoll"):InvokeServer(unpack(args))
+wait(0.1)
+end
+    end
+end)
+
+tab.newToggle("auto cut", "fast auto cut", true, function(toggleState)
+    if toggleState then
+        _G.auto = true
+    
+    
+    while _G.auto do
+local args = {
+    [1] = 1
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("AddGirdCSEvent"):InvokeServer(unpack(args))
+wait(0.1)
+end
+    else
+        _G.auto = false
+        
+        
+    while _G.auto do
+local args = {
+    [1] = 1
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("AddGirdCSEvent"):InvokeServer(unpack(args))
+wait(0.1)
+end
+    end
+end)
+
+tab.newButton("instant win", "auto go to win door!", function()
+    game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("GoToRoomCSEvent"):InvokeServer()
+end)
+
+tab.newButton("skip all lines", "cut all line to get win", function()
+    local args = {
+    [1] = 50
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("AddGirdCSEvent"):InvokeServer(unpack(args))
+end)
+
+local tab = DrRayLibrary.newTab("rolls", "ImageIdHere")
+
+tab.newButton("add rolls +100M", "Prints Hello!", function()
+    local args = {
+    [1] = "roll",
+    [2] = 100000000
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("AddPlayerDataCSEvent"):InvokeServer(unpack(args))
+end)
+
+tab.newButton("add rolls +1B", "Prints Hello!", function()
+    local args = {
+    [1] = "roll",
+    [2] = 1000000000
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("AddPlayerDataCSEvent"):InvokeServer(unpack(args))
+end)
+
+tab.newButton("add rolls +10b", "Prints Hello!", function()
+    local args = {
+    [1] = "roll",
+    [2] = 10000000000
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("AddPlayerDataCSEvent"):InvokeServer(unpack(args))
+end)
+
+
+local tab = DrRayLibrary.newTab("Credit", "ImageIdHere")
+
+tab.newButton("youtube : jack", "", function()
+    print('Hello!')
+end)
